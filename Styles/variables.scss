@@ -1,0 +1,35 @@
+// Colors and Typography
+$primary-color: #006d77;
+$secondary-color: #83c5be;
+$background-color: #fefae0;
+$text-color: #333333;
+$border-color: #dddddd;
+$input-background-color: #f9f9f9;
+$input-border-color: #cccccc;
+$button-background-color: $secondary-color;
+$button-text-color: #ffffff;
+$link-color: $primary-color;
+$link-hover-color: darken($primary-color, 10%);
+$font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$base-font-size: 16px;
+$heading-font-weight: 700;
+$body-font-weight: 400;
+
+// Layout and Spacing
+$border-radius: 4px;
+$spacing-unit: 8px;
+$box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+$hover-shadow:0 0 9px $secondary-color;
+$transition-duration: 0.2s;
+$transition-ease: ease-in;
+$max-width: 1200px;
+
+// Responsive Breakpoints and Z-Index
+$breakpoint-mobile: 480px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+$z-index-modal: 1000;
+$z-index-dropdown: 900;
+$z-index-tooltip: 800;
+
+
