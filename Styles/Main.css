@@ -19,55 +19,255 @@ header nav {
   align-items: center;
   flex-direction: row-reverse;
 }
-header nav .title {
+header nav .brand {
   display: flex;
   align-items: center;
 }
-header nav .title h2 {
+header nav .brand h2 {
   margin: 0 0 0 8px;
   font-weight: 400;
   font-size: 1.2rem;
 }
-header nav .title h1 {
+header nav .brand h1 {
   margin: 0;
 }
-header nav .linkTo {
+header nav .nav-links {
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
   gap: 16px;
 }
-header nav .linkTo :nth-last-child(1) a {
+header nav .nav-links :nth-last-child(1) a {
   background-color: #006d77;
   padding: 10.4px;
   border-radius: 8px;
   color: #ffffff;
 }
-header nav .linkTo :nth-last-child(1) a:hover {
+header nav .nav-links :nth-last-child(1) a:hover {
   color: #ffffff;
   background-color: #83c5be;
 }
-header nav .linkTo li a {
+header nav .nav-links li a {
   padding: 10.4px;
   border-radius: 8px;
   color: #333333;
   text-decoration: none;
-  transition: color 0.2s ease-in, box-shadow 0.2s ease-in, background-color 0.2s ease-in;
+  transition: color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
-header nav .linkTo li a:hover {
+header nav .nav-links li a:hover {
   box-shadow: 0 0 9px #83c5be;
 }
 
 main #about {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  align-items: center;
   flex-direction: row-reverse;
-  background-color: radial-gradiant();
+  height: 90vh;
+  background-image: radial-gradient(farthest-corner at 61% 57%, rgb(141, 141, 141), rgb(198, 198, 198), #fffae0);
+  backdrop-filter: blur(12.8px);
+  -webkit-backdrop-filter: blur(12.8px);
 }
 main #about .profile-image {
   display: flex;
   justify-content: center;
-  align-items: center;
   width: 45%;
+  position: relative;
+}
+main #about .profile-image::after {
+  content: "";
+  position: absolute;
+  width: 450px;
+  height: 450px;
+  top: -17%;
+  left: 17%;
+  background-color: #fefae0;
+  border-radius: 10px;
+  display: block;
+  z-index: 0;
+}
+main #about .profile-image img {
+  width: 300px;
+  height: 300px;
+  position: relative;
+  z-index: 1;
+}
+main #about .about-content {
+  width: 50%;
+}
+main #about .about-content h3 {
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 16px;
+}
+main #about .about-content p {
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+main #skills {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  position: relative;
+  background: radial-gradient(circle at 50% 50%, #fdfdfd, #f0f0f0);
+}
+main #skills h2 {
+  font-size: 3rem;
+  margin: 10px 0;
+}
+main #skills .carousel-container {
+  height: 65%;
+  width: 20%;
+}
+main #skills .carousel-container .showcase-skills {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  list-style: none;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  /* Active (center) card visual treatment */
+}
+main #skills .carousel-container .showcase-skills .Skills-item {
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  z-index: 0;
+  background-color: #fefae0;
+  border-radius: 20px;
+  will-change: opacity, transform;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+main #skills .carousel-container .showcase-skills .Skills-item .progress-bar {
+  height: 10px;
+  width: 80%;
+  background-color: #dddddd;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-top: 8px;
+}
+main #skills .carousel-container .showcase-skills .Skills-item .progress-bar::after {
+  content: "";
+  display: block;
+  height: 100%;
+  width: var(--progress, 0%);
+  background-color: #006d77;
+  transition: width 0.2s ease-in-out;
+}
+main #skills .carousel-container .showcase-skills .Skills-item img {
+  width: 170px;
+  height: 170px;
+  margin-bottom: 20px;
+}
+main #skills .carousel-container .showcase-skills .c1 {
+  opacity: 0.2;
+  left: 95%;
+  transform: translateX(50%);
+}
+main #skills .carousel-container .showcase-skills .c2 {
+  opacity: 0.2;
+  left: 75%;
+  transform: translateX(40%);
+  z-index: 1;
+}
+main #skills .carousel-container .showcase-skills .c3 {
+  opacity: 0.9;
+  left: 40%;
+  transform: translateX(20%);
+  z-index: 2;
+}
+main #skills .carousel-container .showcase-skills .c4 {
+  opacity: 1;
+  left: 0;
+  transform: translateX(0);
+  z-index: 3;
+}
+main #skills .carousel-container .showcase-skills .c5 {
+  opacity: 0.9;
+  right: 40%;
+  transform: translateX(-20%);
+  z-index: 2;
+}
+main #skills .carousel-container .showcase-skills .c6 {
+  opacity: 0.4;
+  right: 55%;
+  transform: translateX(-30%);
+  z-index: 1;
+}
+main #skills .carousel-container .showcase-skills .c7 {
+  opacity: 0.4;
+  right: 75%;
+  transform: translateX(-40%);
+  z-index: 1;
+}
+main #skills .carousel-container .showcase-skills .c8 {
+  opacity: 0.2;
+  right: 95%;
+  transform: translateX(-50%);
+}
+main #skills .carousel-container .showcase-skills .Skills-item.active {
+  transform: translateX(0) scale(1.04);
+  opacity: 1;
+  z-index: 5;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+main #skills .carousel-container .showcase-skills .Skills-item.active img {
+  transform: translateZ(20px);
+}
+main #skills .carousel-container .showcase-skills .Skills-item.active p {
+  font-weight: 700;
+  color: #333333;
+}
+main #skills .carousel-container .showcase-skills .Skills-item.active .progress-bar::after {
+  width: attr(data-progress percent, percentage);
+}
+main #skills .carousel-container .carousel-button {
+  position: absolute;
+  bottom: 0;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  border: none;
+  color: #fff;
+  background-color: rgb(52, 52, 52);
+  padding: 8px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 10;
+  text-align: center;
+  padding: 0;
+  transition: all 0.2s ease-in-out;
+}
+main #skills .carousel-container .carousel-button p {
+  margin: 0;
+  transition: all 0.2s ease-in-out;
+}
+main #skills .carousel-container .carousel-button:hover {
+  background-color: black;
+  transform: scale(1.1);
+}
+main #skills .carousel-container .carousel-button.prev {
+  left: 35%;
+}
+main #skills .carousel-container .carousel-button.prev:hover p {
+  transform: translateX(-4px);
+}
+main #skills .carousel-container .carousel-button.next {
+  right: 35%;
+}
+main #skills .carousel-container .carousel-button.next:hover p {
+  transform: translateX(4px);
 }/*# sourceMappingURL=Main.css.map */

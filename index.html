@@ -3,6 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Ashkan Firouzeh - Front-End Developer passionate about building responsive, user-friendly, and AI-driven web experiences."
+    />
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="./Styles/Main.css" />
     <title>Ashkan Firouzeh</title>
@@ -11,13 +15,15 @@
     <!-- header with navigation links and name -->
     <header>
       <nav>
-        <ul class="linkTo">
-          <li><a href="#about">About Me</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#contact">Contact</a></li>
+        <ul class="nav-links">
+          <li><a href="#about" aria-label="About Section">About</a></li>
+          <li><a href="#skills" aria-label="Skills Section">Skills</a></li>
+          <li>
+            <a href="#projects" aria-label="Projects Section">Projects</a>
+          </li>
+          <li><a href="#contact" aria-label="Contact Section">Contact</a></li>
         </ul>
-        <div class="title">
+        <div class="brand">
           <h1>Ashkan Firouzeh</h1>
           <h2>Web Developer</h2>
         </div>
@@ -27,18 +33,105 @@
     <main>
       <section id="about">
         <div class="profile-image">
-          <img src="your-photo.jpg" alt="Ashkan Firouzeh" />
+          <img
+            src="./Images/test-profile.png"
+            alt="Ashkan Firouzeh"
+            loading="lazy"
+          />
         </div>
         <div class="about-content">
           <h3>Hello, I'm Ashkan 👋</h3>
           <p>
-            I'm <strong>Ashkan Firouzeh</strong>, a front-end developer focused
-            on building clean, responsive, and user-friendly websites. Over the
-            past several months, I’ve been improving my skills through
-            real-world projects using HTML, CSS, JavaScript, and Sass. I’m
-            passionate about turning ideas into interactive digital experiences
-            and continuously expanding my knowledge.
+            I'm <strong>Ashkan Firouzeh</strong>, a front-end developer with
+            solid experience in building clean, responsive, and user-focused web
+            interfaces using
+            <strong>HTML, CSS, Sass, JavaScript, React.js, and Next.js</strong>.
+            Alongside front-end development, I’ve also been learning
+            <strong>Python</strong> to understand back-end fundamentals and
+            prepare for full-stack projects. I’m highly passionate about
+            expanding my skills in <strong>Data Science</strong>,
+            <strong>AI</strong>, and <strong>Machine Learning</strong> — aiming
+            to grow into a versatile <strong>Full-Stack Developer</strong> and
+            <strong>AI/ML Engineer</strong> capable of contributing to
+            real-world solutions in the global tech industry.
           </p>
+        </div>
+      </section>
+      <section id="skills">
+        <h2>My skills</h2>
+        <div class="carousel-container">
+          <ul class="showcase-skills">
+            <li class="Skills-item c1" data-progress="90%">
+              <img
+                src="./Images/HTML5_logo_and_wordmark.svg"
+                alt=""
+                class="HTML5"
+              />
+              <p>90%</p>
+              <div class="progress-bar"></div>
+            </li>
+            <li class="Skills-item c2" data-progress="80%">
+              <img
+                src="./Images/CSS3_logo_and_wordmark.svg"
+                alt=""
+                class="CSS3"
+              />
+              <p>80%</p>
+              <div class="progress-bar"></div>
+            </li>
+            <li class="Skills-item c3" data-progress="75%">
+              <img
+                src="./Images/Unofficial_JavaScript_logo_2.svg"
+                alt=""
+                class="JavaScript"
+              />
+              <p>75%</p>
+              <div class="progress-bar"></div>
+            </li>
+            <li class="Skills-item c4" data-progress="70%">
+              <img src="./Images/Sass_Logo_Color.svg" alt="" class="Sass" />
+              <p>70%</p>
+              <div class="progress-bar"></div>
+            </li>
+            <li class="Skills-item c5" data-progress="35%">
+              <img
+                src="./Images/nextjs-icon-svgrepo-com.svg"
+                alt=""
+                class="Next.js"
+              />
+              <p>35%</p>
+              <div class="progress-bar"></div>
+            </li>
+            <li class="Skills-item c6" data-progress="30%">
+              <img
+                src="./Images/Python-logo-notext.svg"
+                alt=""
+                class="Python"
+              />
+              <p>30%</p>
+              <div class="progress-bar"></div>
+            </li>
+            <li class="Skills-item c7" data-progress="60%">
+              <img src="./Images/React-icon.svg" alt="" class="React" />
+              <p>60%</p>
+              <div class="progress-bar"></div>
+            </li>
+            <li class="Skills-item c8" data-progress="80%">
+              <img
+                src="./Images/jquery-svgrepo-com.svg"
+                alt=""
+                class="jQuery"
+              />
+              <p>80%</p>
+              <div class="progress-bar"></div>
+            </li>
+          </ul>
+          <button class="carousel-button prev" aria-label="Previous Skills">
+            <p>&#10094;</p>
+          </button>
+          <button class="carousel-button next" aria-label="Next Skills">
+            <p>&#10095;</p>
+          </button>
         </div>
       </section>
       <section id="projects">
@@ -94,18 +187,6 @@
           </li>
         </ul>
       </section>
-      <section id="skills">
-        <h2>My skills</h2>
-        <div>
-          <img src="" alt="" />
-          <img src="" alt="" />
-          <img src="" alt="" />
-          <img src="" alt="" />
-          <img src="" alt="" />
-          <img src="" alt="" />
-          <img src="" alt="" />
-        </div>
-      </section>
       <section id="contact">
         <h3>Contact</h3>
         <p>
@@ -135,5 +216,7 @@
       </div>
       <p>&copy; 2023 Ashkan Firouzeh. All rights reserved.</p>
     </footer>
+
+    <script src="./main.js"></script>
   </body>
 </html>
