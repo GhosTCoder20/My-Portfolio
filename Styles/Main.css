@@ -36,28 +36,59 @@ header nav .nav-links {
   padding: 0;
   margin: 0;
   display: flex;
+  align-items: center;
   gap: 16px;
+  z-index: 2;
 }
-header nav .nav-links #language {
-  padding: 6.4px;
-  border-radius: 8px;
-  border: 1px solid #dddddd;
-  color: #333333;
-  font-size: 1rem;
+header nav .nav-links .LanguageSelection {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+  position: relative;
+  padding: 8px;
+  border-radius: 13px;
   cursor: pointer;
   transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
-header nav .nav-links #language:hover {
+header nav .nav-links .LanguageSelection:hover {
   border-color: #006d77;
   box-shadow: 0 0 9px #83c5be;
 }
-header nav .nav-links :nth-last-child(3) a {
+header nav .nav-links .LanguageSelection i {
+  font-size: 1.5rem;
+  color: #333333;
+}
+header nav .nav-links .LanguageSelection .lang-select {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 102%;
+  left: 0;
+  background-color: #fefae0;
+  border-radius: 8px;
+  border: #333333 solid 1px;
+}
+header nav .nav-links .LanguageSelection .lang-select li {
+  padding: 10px;
+}
+header nav .nav-links .LanguageSelection .lang-select li:hover {
+  background-color: #006d77;
+  color: #ffffff;
+}
+header nav .nav-links .LanguageSelection .lang-select li:nth-child(2) {
+  border-radius: 0 0 8px 8px;
+}
+header nav .nav-links .LanguageSelection .lang-select li:nth-child(1) {
+  border-radius: 8px 8px 0 0;
+}
+header nav .nav-links :nth-last-child(2) a {
   background-color: #006d77;
   padding: 10.4px;
   border-radius: 8px;
   color: #ffffff;
 }
-header nav .nav-links :nth-last-child(3) a:hover {
+header nav .nav-links :nth-last-child(2) a:hover {
   color: #ffffff;
   background-color: #83c5be;
 }

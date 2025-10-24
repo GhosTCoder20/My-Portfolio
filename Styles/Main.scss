@@ -34,13 +34,16 @@ header {
       padding: 0;
       margin: 0;
       display: flex;
+      align-items: center;
       gap: $spacing-unit * 2;
-      #language {
-        padding: $spacing-unit * 0.8;
-        border-radius: 8px;
-        border: 1px solid $border-color;
-        color: $text-color;
-        font-size: 1rem;
+      z-index: 2;
+      .LanguageSelection {
+        display: flex;
+        align-items: center;
+        margin-left: 10px;
+        position: relative;
+        padding: $spacing-unit;
+        border-radius: 13px;
         cursor: pointer;
         transition: border-color $transition-duration $transition-ease,
           box-shadow $transition-duration $transition-ease;
@@ -48,8 +51,36 @@ header {
           border-color: $primary-color;
           box-shadow: $hover-shadow;
         }
-      } 
-      :nth-last-child(3) {
+        i {
+          font-size: 1.5rem;
+          color: $text-color;
+        }
+        .lang-select {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+          position: absolute;
+          top: 102%;
+          left: 0;
+          background-color: $background-color;
+          border-radius: 8px;
+          border: $text-color solid 1px;
+          li {
+            padding: 10px;
+            &:hover {
+              background-color: $primary-color;
+              color: $button-text-color;
+            }
+            &:nth-child(2){
+              border-radius: 0 0 8px 8px;
+            }
+            &:nth-child(1){
+              border-radius: 8px 8px 0 0;
+            }
+          }
+        }
+      }
+      :nth-last-child(2) {
         a {
           background-color: $primary-color;
           padding: $spacing-unit * 1.3;
