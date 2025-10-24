@@ -12,16 +12,24 @@
     <title>Ashkan Firouzeh</title>
   </head>
   <body>
+    <!-- Added font awesome kit -->
+    <script src="https://kit.fontawesome.com/cb76c5b9d1.js" crossorigin="anonymous"></script>
+
     <!-- header with navigation links and name -->
     <header>
       <nav>
         <ul class="nav-links">
-          <li><a href="#about" aria-label="About Section">About</a></li>
+          <li><a href="#introduction" aria-label="Introduction Section">About me</a></li>
           <li><a href="#skills" aria-label="Skills Section">Skills</a></li>
           <li>
             <a href="#projects" aria-label="Projects Section">Projects</a>
           </li>
           <li><a href="#contact" aria-label="Contact Section">Contact</a></li>
+          <label for="language"><i class="fa-solid fa-globe"></i></label>
+          <select name="language" id="language" aria-label="Select Language">
+            <option value="en">English</option>
+            <option value="per">Persian</option>
+          </select>
         </ul>
         <div class="brand">
           <h1>Ashkan Firouzeh</h1>
@@ -31,7 +39,7 @@
     </header>
     <!-- Content and section -->
     <main>
-      <section id="about">
+      <section id="introduction">
         <div class="profile-image">
           <img
             src="./Images/test-profile.png"
@@ -135,12 +143,12 @@
         </div>
       </section>
       <section id="projects">
-        <h3>Projects</h3>
-        <ul>
+        <h2>Projects</h2>
+        <ul class="ProjectLists">
           <li>
-            <a href="https://example.com/project1"
+            <a href=""
               ><div>
-                <img src="https://via.placeholder.com/150" alt="Project 1" />
+                <img src="./Images/mountain-rock-forest-nature-scenery-hd-wallpaper-uhdpaper.com-134@0@i.jpg" alt="Project 1" />
                 <section>
                   <h3>Project 1</h3>
                   <p>A brief description of Project 1.</p>
@@ -154,12 +162,12 @@
             >
           </li>
           <li>
-            <a href="https://example.com/project2"
+            <a href=""
               ><div>
-                <img src="https://via.placeholder.com/150" alt="Project 2" />
+                <img src="./Images/mountain-rock-forest-nature-scenery-hd-wallpaper-uhdpaper.com-134@0@i.jpg" alt="Project 1" />
                 <section>
-                  <h3>Project 2</h3>
-                  <p>A brief description of Project 2.</p>
+                  <h3>Project 1</h3>
+                  <p>A brief description of Project 1.</p>
                   <ul>
                     <li>Feature 1</li>
                     <li>Feature 2</li>
@@ -170,12 +178,12 @@
             >
           </li>
           <li>
-            <a href="https://example.com/project3"
+            <a href=""
               ><div>
-                <img src="https://via.placeholder.com/150" alt="Project 3" />
+                <img src="./Images/mountain-rock-forest-nature-scenery-hd-wallpaper-uhdpaper.com-134@0@i.jpg" alt="Project 1" />
                 <section>
-                  <h3>Project 3</h3>
-                  <p>A brief description of Project 3.</p>
+                  <h3>Project 1</h3>
+                  <p>A brief description of Project 1.</p>
                   <ul>
                     <li>Feature 1</li>
                     <li>Feature 2</li>
@@ -189,31 +197,31 @@
       </section>
       <section id="contact">
         <h3>Contact</h3>
+        <div>
+          <form action="" method="post">
+            <label for="FName">First Name:</label>
+            <input type="text" id="FName" name="FName" required />
+            <label for="LName">Last Name:</label>
+            <input type="text" id="LName" name="LName" />
+            <label for="companyName">Company Name:</label>
+            <input type="text" id="companyName" name="companyName" />
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required />
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            <button type="submit">Send</button>
+          </form>
+        </div>
         <p>
-          You can reach me via email at
+          You can also reach me via email at
           <a href="mailto:ashkanfirouzeh80m@gmail.com"
             >ashkanfirouzeh80m@gmail.com</a
           >.
         </p>
       </section>
     </main>
-    <!-- Contact and footer section -->
+    <!-- Copyright and footer section -->
     <footer>
-      <div>
-        <form action="" method="post">
-          <label for="FName">First Name:</label>
-          <input type="text" id="FName" name="FName" required />
-          <label for="LName">Last Name:</label>
-          <input type="text" id="LName" name="LName" />
-          <label for="companyName">Company Name:</label>
-          <input type="text" id="companyName" name="companyName" />
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" required />
-          <label for="message">Message:</label>
-          <textarea id="message" name="message" required></textarea>
-          <button type="submit">Send</button>
-        </form>
-      </div>
       <p>&copy; 2023 Ashkan Firouzeh. All rights reserved.</p>
     </footer>
 
