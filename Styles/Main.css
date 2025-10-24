@@ -38,13 +38,26 @@ header nav .nav-links {
   display: flex;
   gap: 16px;
 }
-header nav .nav-links :nth-last-child(1) a {
+header nav .nav-links #language {
+  padding: 6.4px;
+  border-radius: 8px;
+  border: 1px solid #dddddd;
+  color: #333333;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+header nav .nav-links #language:hover {
+  border-color: #006d77;
+  box-shadow: 0 0 9px #83c5be;
+}
+header nav .nav-links :nth-last-child(3) a {
   background-color: #006d77;
   padding: 10.4px;
   border-radius: 8px;
   color: #ffffff;
 }
-header nav .nav-links :nth-last-child(1) a:hover {
+header nav .nav-links :nth-last-child(3) a:hover {
   color: #ffffff;
   background-color: #83c5be;
 }
@@ -59,7 +72,7 @@ header nav .nav-links li a:hover {
   box-shadow: 0 0 9px #83c5be;
 }
 
-main #about {
+main #introduction {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -69,13 +82,13 @@ main #about {
   backdrop-filter: blur(12.8px);
   -webkit-backdrop-filter: blur(12.8px);
 }
-main #about .profile-image {
+main #introduction .profile-image {
   display: flex;
   justify-content: center;
   width: 45%;
   position: relative;
 }
-main #about .profile-image::after {
+main #introduction .profile-image::after {
   content: "";
   position: absolute;
   width: 450px;
@@ -87,21 +100,21 @@ main #about .profile-image::after {
   display: block;
   z-index: 0;
 }
-main #about .profile-image img {
+main #introduction .profile-image img {
   width: 300px;
   height: 300px;
   position: relative;
   z-index: 1;
 }
-main #about .about-content {
+main #introduction .about-content {
   width: 50%;
 }
-main #about .about-content h3 {
+main #introduction .about-content h3 {
   font-weight: 700;
   font-size: 2rem;
   margin-bottom: 16px;
 }
-main #about .about-content p {
+main #introduction .about-content p {
   line-height: 1.6;
   margin-bottom: 16px;
 }
@@ -270,4 +283,55 @@ main #skills .carousel-container .carousel-button.next {
 }
 main #skills .carousel-container .carousel-button.next:hover p {
   transform: translateX(4px);
+}
+main #projects {
+  height: 100vh;
+  padding: 16px;
+}
+main #projects h2 {
+  font-size: 3rem;
+  text-align: center;
+}
+main #projects .ProjectLists {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+}
+main #projects .ProjectLists li {
+  width: 32%;
+}
+main #projects .ProjectLists li a {
+  width: 100%;
+  text-decoration: none;
+  color: black;
+}
+main #projects .ProjectLists li a div {
+  padding: 2vw;
+  border-radius: 4px;
+  transition: box-shadow 0.2s ease-in-out;
+}
+main #projects .ProjectLists li a div img {
+  width: 100%;
+  border-radius: 4px;
+  height: auto;
+  transition: transform 0.2s ease-in-out;
+}
+main #projects .ProjectLists li a div ul {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 0 0;
+}
+main #projects .ProjectLists li a div ul section h3 {
+  margin: 0 0 4px 0;
+}
+main #projects .ProjectLists li a div ul section p {
+  margin: 0;
+  line-height: 1.4;
+}
+main #projects .ProjectLists li a:hover div {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+}
+main #projects .ProjectLists li a:hover img {
+  transform: scale(1.05);
 }/*# sourceMappingURL=Main.css.map */

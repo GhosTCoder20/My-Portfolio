@@ -35,7 +35,21 @@ header {
       margin: 0;
       display: flex;
       gap: $spacing-unit * 2;
-      :nth-last-child(1) {
+      #language {
+        padding: $spacing-unit * 0.8;
+        border-radius: 8px;
+        border: 1px solid $border-color;
+        color: $text-color;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: border-color $transition-duration $transition-ease,
+          box-shadow $transition-duration $transition-ease;
+        &:hover {
+          border-color: $primary-color;
+          box-shadow: $hover-shadow;
+        }
+      } 
+      :nth-last-child(3) {
         a {
           background-color: $primary-color;
           padding: $spacing-unit * 1.3;
@@ -65,7 +79,7 @@ header {
   }
 }
 main {
-  #about {
+  #introduction {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -285,6 +299,61 @@ main {
           &:hover {
             p {
               transform: translateX(4px);
+            }
+          }
+        }
+      }
+    }
+  }
+  #projects {
+    height: 100vh;
+    padding: $spacing-unit * 2;
+    h2 {
+      font-size: 3rem;
+      text-align: center;
+    }
+    .ProjectLists {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      justify-content: space-between;
+      li {
+        width: 32%;
+        a {
+          width: 100%;
+          text-decoration: none;
+          color: black;
+          div {
+            padding: 2vw;
+            border-radius: $border-radius;
+            transition: box-shadow $transition-duration $transition-ease;
+            img {
+              width: 100%;
+              border-radius: $border-radius;
+              height: auto;
+              transition: transform $transition-duration $transition-ease;
+            }
+            ul {
+              list-style: none;
+              padding: 0;
+              margin: $spacing-unit 0 0 0;
+              section {
+                h3 {
+                  margin: 0 0 $spacing-unit / 2 0;
+                }
+                p {
+                  margin: 0;
+                  line-height: 1.4;
+                }
+              }
+            }
+          }
+          &:hover {
+            div {
+              box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+            }
+            img {
+              transform: scale(1.05);
             }
           }
         }
