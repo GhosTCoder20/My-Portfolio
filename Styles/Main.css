@@ -63,14 +63,19 @@ header nav .nav-links .LanguageSelection .lang-select {
   margin: 0;
   padding: 0;
   position: absolute;
-  top: 102%;
+  top: 110%;
   left: 0;
   background-color: #fefae0;
   border-radius: 8px;
   border: #333333 solid 1px;
+  opacity: 0;
+  transform: translateY(-6px);
+  pointer-events: none;
+  transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
 }
 header nav .nav-links .LanguageSelection .lang-select li {
   padding: 10px;
+  cursor: pointer;
 }
 header nav .nav-links .LanguageSelection .lang-select li:hover {
   background-color: #006d77;
@@ -81,6 +86,11 @@ header nav .nav-links .LanguageSelection .lang-select li:nth-child(2) {
 }
 header nav .nav-links .LanguageSelection .lang-select li:nth-child(1) {
   border-radius: 8px 8px 0 0;
+}
+header nav .nav-links .LanguageSelection.open .lang-select {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
 }
 header nav .nav-links :nth-last-child(2) a {
   background-color: #006d77;
@@ -148,6 +158,59 @@ main #introduction .about-content h3 {
 main #introduction .about-content p {
   line-height: 1.6;
   margin-bottom: 16px;
+}
+main #AboutMe {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+main #AboutMe h2 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+main #AboutMe p {
+  line-height: 1.6;
+  margin: 0 auto;
+  width: 60%;
+}
+main #AboutMe .soft-skills {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+  animation: fadeup 2s ease-in-out;
+}
+main #AboutMe .soft-skills .skill-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.5rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+main #AboutMe .soft-skills .skill-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+main #AboutMe .soft-skills .skill-item i {
+  margin-bottom: 10px;
+  color: var(--primary-color);
+}
+main #AboutMe .soft-skills .skill-item:hover {
+  transform: translateY(-5px);
+}
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 main #skills {
   height: 100vh;

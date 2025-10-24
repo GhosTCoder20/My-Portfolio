@@ -1,4 +1,59 @@
 window.addEventListener("DOMContentLoaded", () => {
+  // Language selection dropdown: toggle .open on the container, close when clicking outside
+  const langSelect = document.querySelector(".LanguageSelection");
+  if (langSelect) {
+    const langList = langSelect.querySelector(".lang-select");
+
+    langSelect.addEventListener("click", (e) => {
+      e.stopPropagation(); // prevent the document click handler from immediately closing it
+      langSelect.classList.toggle("open");
+    });
+
+    if (langList) {
+      langList.addEventListener("click", (e) => {
+        const li = e.target.closest("li[data-lang]");
+        if (li) {
+          const lang = li.getAttribute("data-lang");
+          langSelect.classList.remove("open");
+        }
+      });
+    }
+    document.addEventListener("click", () => {
+      langSelect.classList.remove("open");
+    });
+  }
+
+  
+  // Animate skills items on scroll into view with staggered effect
+  const skillItems = document.querySelectorAll(".skill-item");
+
+  function handleScroll() {
+    skillItems.forEach((item, index) => {
+      const rect = item.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+
+      if (rect.top < windowHeight - 100) {
+        setTimeout(() => {
+          item.classList.add("visible");
+        }, index * 200); 
+      }
+    });
+  }
+
+  let isScrolling = false;
+  window.addEventListener("scroll", () => {
+    if (!isScrolling) {
+      window.requestAnimationFrame(() => {
+        handleScroll();
+        isScrolling = false;
+      });
+      isScrolling = true;
+    }
+  });
+  // Initial check in case items are already in view
+  handleScroll();
+
+
   //Show skills carousel with 3D effect
   const carousel = document.querySelector(".showcase-skills");
   const carouselList = carousel.querySelectorAll("li");

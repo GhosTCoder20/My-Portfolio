@@ -13,29 +13,55 @@
   </head>
   <body>
     <!-- Added font awesome kit -->
-    <script src="https://kit.fontawesome.com/cb76c5b9d1.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/cb76c5b9d1.js"
+      crossorigin="anonymous"
+    ></script>
 
     <!-- header with navigation links and name -->
     <header>
       <nav>
         <ul class="nav-links">
-          <li><a href="#introduction" aria-label="Introduction Section">About me</a></li>
-          <li><a href="#skills" aria-label="Skills Section">Skills</a></li>
           <li>
-            <a href="#projects" aria-label="Projects Section">Projects</a>
+            <a
+              href="#AboutMe"
+              aria-label="About Me Section"
+              data-key="nav-about"
+              >About me</a
+            >
           </li>
-          <li><a href="#contact" aria-label="Contact Section">Contact</a></li>
+          <li>
+            <a href="#skills" aria-label="Skills Section" data-key="nav-skills"
+              >Skills</a
+            >
+          </li>
+          <li>
+            <a
+              href="#projects"
+              aria-label="Projects Section"
+              data-key="nav-projects"
+              >Projects</a
+            >
+          </li>
+          <li>
+            <a
+              href="#contact"
+              aria-label="Contact Section"
+              data-key="nav-contact"
+              >Contact</a
+            >
+          </li>
           <div class="LanguageSelection">
             <i class="fa-solid fa-globe"></i>
             <ul class="lang-select">
-              <li>English</li>
-              <li>Persian</li>
+              <li data-lang="en" data-key="lang-en">English</li>
+              <li data-lang="per" data-key="lang-per">Persian</li>
             </ul>
           </div>
         </ul>
         <div class="brand">
-          <h1>Ashkan Firouzeh</h1>
-          <h2>Web Developer</h2>
+          <h1 data-key="name">Ashkan Firouzeh</h1>
+          <h2 data-key="brand-title">Web Developer</h2>
         </div>
       </nav>
     </header>
@@ -50,8 +76,8 @@
           />
         </div>
         <div class="about-content">
-          <h3>Hello, I'm Ashkan 👋</h3>
-          <p>
+          <h3 data-key="intro-title">Hello, I'm Ashkan 👋</h3>
+          <p data-key="intro-description">
             I'm <strong>Ashkan Firouzeh</strong>, a front-end developer with
             solid experience in building clean, responsive, and user-focused web
             interfaces using
@@ -67,8 +93,54 @@
           </p>
         </div>
       </section>
+      <section id="AboutMe">
+        <h2 data-key="about-title">About me</h2>
+        <p data-key="about-description">
+          I've been working and learning in the exciting field of web
+          development for about two years. During this time, I’ve gained
+          hands-on experience with various technologies and frameworks.<br />
+          I first started with HTML and CSS, then moved on to JavaScript, and
+          later explored frameworks like React.js and Next.js. I'm also familiar
+          with version control systems like Git and platforms such as GitHub.
+          <br />
+
+          As I kept learning web development, I discovered my passion for AI and
+          machine learning, which I find incredibly fascinating. Since the tech
+          world is rapidly shifting toward AI, I’ve started exploring how these
+          technologies can be integrated with modern web development. <br />
+
+          For now, my short-term goal is to work as a front-end developer in a
+          reputable company where I can continue growing my skills, collaborate
+          with talented teams, and contribute to real-world projects. I’m always
+          eager to learn new things, solve problems creatively, and help create
+          a positive, friendly, and innovative work environment.<br />
+        </p>
+
+        <div class="soft-skills">
+          <div class="skill-item">
+            <i class="fas fa-users"></i>
+            <span data-key="soft-teamwork">Teamwork</span>
+          </div>
+          <div class="skill-item">
+            <i class="fas fa-lightbulb"></i>
+            <span data-key="soft-problem">Problem Solving</span>
+          </div>
+          <div class="skill-item">
+            <i class="fas fa-comments"></i>
+            <span data-key="soft-communication">Communication</span>
+          </div>
+          <div class="skill-item">
+            <i class="fas fa-brain"></i>
+            <span data-key="soft-adaptability">Adaptability</span>
+          </div>
+          <div class="skill-item">
+            <i class="fas fa-smile-beam"></i>
+            <span data-key="soft-positivity">Positive Attitude</span>
+          </div>
+        </div>
+      </section>
       <section id="skills">
-        <h2>My skills</h2>
+        <h2 data-key="title-skills">My skills</h2>
         <div class="carousel-container">
           <ul class="showcase-skills">
             <li class="Skills-item c1" data-progress="90%">
@@ -145,12 +217,36 @@
         </div>
       </section>
       <section id="projects">
-        <h2>Projects</h2>
+        <h2 data-key="title-projects">Projects</h2>
         <ul class="ProjectLists">
           <li>
             <a href=""
               ><div>
-                <img src="./Images/mountain-rock-forest-nature-scenery-hd-wallpaper-uhdpaper.com-134@0@i.jpg" alt="Project 1" />
+                <img
+                  src="./Images/mountain-rock-forest-nature-scenery-hd-wallpaper-uhdpaper.com-134@0@i.jpg"
+                  alt="Project 1"
+                />
+                <section>
+                  <h3 data-key="pro1-title">ToDo list App</h3>
+                  <p data-key="pro1-desc">
+                    
+                  </p>
+                  <ul>
+                    <li>Feature 1</li>
+                    <li>Feature 2</li>
+                    <li>Feature 3</li>
+                  </ul>
+                </section>
+              </div></a
+            >
+          </li>
+          <li>
+            <a href=""
+              ><div>
+                <img
+                  src="./Images/mountain-rock-forest-nature-scenery-hd-wallpaper-uhdpaper.com-134@0@i.jpg"
+                  alt="Project 1"
+                />
                 <section>
                   <h3>Project 1</h3>
                   <p>A brief description of Project 1.</p>
@@ -166,23 +262,10 @@
           <li>
             <a href=""
               ><div>
-                <img src="./Images/mountain-rock-forest-nature-scenery-hd-wallpaper-uhdpaper.com-134@0@i.jpg" alt="Project 1" />
-                <section>
-                  <h3>Project 1</h3>
-                  <p>A brief description of Project 1.</p>
-                  <ul>
-                    <li>Feature 1</li>
-                    <li>Feature 2</li>
-                    <li>Feature 3</li>
-                  </ul>
-                </section>
-              </div></a
-            >
-          </li>
-          <li>
-            <a href=""
-              ><div>
-                <img src="./Images/mountain-rock-forest-nature-scenery-hd-wallpaper-uhdpaper.com-134@0@i.jpg" alt="Project 1" />
+                <img
+                  src="./Images/mountain-rock-forest-nature-scenery-hd-wallpaper-uhdpaper.com-134@0@i.jpg"
+                  alt="Project 1"
+                />
                 <section>
                   <h3>Project 1</h3>
                   <p>A brief description of Project 1.</p>

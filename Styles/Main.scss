@@ -55,29 +55,41 @@ header {
           font-size: 1.5rem;
           color: $text-color;
         }
+
         .lang-select {
           list-style: none;
           margin: 0;
           padding: 0;
           position: absolute;
-          top: 102%;
+          top: 110%;
           left: 0;
           background-color: $background-color;
           border-radius: 8px;
           border: $text-color solid 1px;
+          opacity: 0;
+          transform: translateY(-6px);
+          pointer-events: none;
+          transition: opacity $transition-duration $transition-ease,
+            transform $transition-duration $transition-ease;
           li {
             padding: 10px;
+            cursor: pointer;
             &:hover {
               background-color: $primary-color;
               color: $button-text-color;
             }
-            &:nth-child(2){
+            &:nth-child(2) {
               border-radius: 0 0 8px 8px;
             }
-            &:nth-child(1){
+            &:nth-child(1) {
               border-radius: 8px 8px 0 0;
             }
           }
+        }
+        &.open .lang-select {
+          opacity: 1;
+          transform: translateY(0);
+          pointer-events: auto;
         }
       }
       :nth-last-child(2) {
@@ -159,6 +171,59 @@ main {
       p {
         line-height: 1.6;
         margin-bottom: $spacing-unit * 2;
+      }
+    }
+  }
+  #AboutMe {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    h2 {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+    p {
+      line-height: 1.6;
+      margin: 0 auto;
+      width: 60%;
+    }
+    .soft-skills {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2.5rem;
+      animation: fadeup 2s ease-in-out;
+      .skill-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 1.5rem;
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+        &.visible {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        i {
+          margin-bottom: 10px;
+          color: var(--primary-color);
+        }
+        &:hover {
+          transform: translateY(-5px);
+        }
+      }
+    }
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
       }
     }
   }
