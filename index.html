@@ -13,27 +13,48 @@
   </head>
   <body>
     <!-- Added font awesome kit -->
-    <script src="https://kit.fontawesome.com/cb76c5b9d1.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/cb76c5b9d1.js"
+      crossorigin="anonymous"
+    ></script>
 
     <!-- header with navigation links and name -->
     <header>
       <nav>
         <ul class="nav-links">
-          <li><a href="#introduction" aria-label="Introduction Section">About me</a></li>
-          <li><a href="#skills" aria-label="Skills Section">Skills</a></li>
           <li>
-            <a href="#projects" aria-label="Projects Section">Projects</a>
+            <a
+              href="#AboutMe"
+              aria-label="About Me Section"
+              data-key="nav-about"
+              >About me</a
+            >
           </li>
-          <li><a href="#contact" aria-label="Contact Section">Contact</a></li>
-          <label for="language"><i class="fa-solid fa-globe"></i></label>
-          <select name="language" id="language" aria-label="Select Language">
-            <option value="en">English</option>
-            <option value="per">Persian</option>
-          </select>
+          <li>
+            <a href="#skills" aria-label="Skills Section" data-key="nav-skills"
+              >Skills</a
+            >
+          </li>
+          <li>
+            <a
+              href="#projects"
+              aria-label="Projects Section"
+              data-key="nav-projects"
+              >Projects</a
+            >
+          </li>
+          <li>
+            <a
+              href="#contact"
+              aria-label="Contact Section"
+              data-key="nav-contact"
+              >Contact</a
+            >
+          </li>
         </ul>
         <div class="brand">
-          <h1>Ashkan Firouzeh</h1>
-          <h2>Web Developer</h2>
+          <h1 data-key="name">Ashkan Firouzeh</h1>
+          <h2 data-key="brand-title">Web Developer</h2>
         </div>
       </nav>
     </header>
@@ -48,8 +69,8 @@
           />
         </div>
         <div class="about-content">
-          <h3>Hello, I'm Ashkan 👋</h3>
-          <p>
+          <h3 data-key="intro-title">Hello, I'm Ashkan 👋</h3>
+          <p data-key="intro-description">
             I'm <strong>Ashkan Firouzeh</strong>, a front-end developer with
             solid experience in building clean, responsive, and user-focused web
             interfaces using
@@ -65,8 +86,54 @@
           </p>
         </div>
       </section>
+      <section id="AboutMe">
+        <h2 data-key="about-title">About me</h2>
+        <p data-key="about-description">
+          I've been working and learning in the exciting field of web
+          development for about two years. During this time, I’ve gained
+          hands-on experience with various technologies and frameworks.<br />
+          I first started with HTML and CSS, then moved on to JavaScript, and
+          later explored frameworks like React.js and Next.js. I'm also familiar
+          with version control systems like Git and platforms such as GitHub.
+          <br />
+
+          As I kept learning web development, I discovered my passion for AI and
+          machine learning, which I find incredibly fascinating. Since the tech
+          world is rapidly shifting toward AI, I’ve started exploring how these
+          technologies can be integrated with modern web development. <br />
+
+          For now, my short-term goal is to work as a front-end developer in a
+          reputable company where I can continue growing my skills, collaborate
+          with talented teams, and contribute to real-world projects. I’m always
+          eager to learn new things, solve problems creatively, and help create
+          a positive, friendly, and innovative work environment.<br />
+        </p>
+
+        <div class="soft-skills">
+          <div class="skill-item">
+            <i class="fas fa-users"></i>
+            <span data-key="soft-teamwork">Teamwork</span>
+          </div>
+          <div class="skill-item">
+            <i class="fas fa-lightbulb"></i>
+            <span data-key="soft-problem">Problem Solving</span>
+          </div>
+          <div class="skill-item">
+            <i class="fas fa-comments"></i>
+            <span data-key="soft-communication">Communication</span>
+          </div>
+          <div class="skill-item">
+            <i class="fas fa-brain"></i>
+            <span data-key="soft-adaptability">Adaptability</span>
+          </div>
+          <div class="skill-item">
+            <i class="fas fa-smile-beam"></i>
+            <span data-key="soft-positivity">Positive Attitude</span>
+          </div>
+        </div>
+      </section>
       <section id="skills">
-        <h2>My skills</h2>
+        <h2 data-key="title-skills">My skills</h2>
         <div class="carousel-container">
           <ul class="showcase-skills">
             <li class="Skills-item c1" data-progress="90%">
@@ -143,19 +210,45 @@
         </div>
       </section>
       <section id="projects">
-        <h2>Projects</h2>
+        <h2 data-key="title-projects">My Projects</h2>
         <ul class="ProjectLists">
           <li>
             <a href=""
               ><div>
-                <img src="./Images/mountain-rock-forest-nature-scenery-hd-wallpaper-uhdpaper.com-134@0@i.jpg" alt="Project 1" />
+                <img
+                  src="./Images/mountain-rock-forest-nature-scenery-hd-wallpaper-uhdpaper.com-134@0@i.jpg"
+                  alt="Project 1"
+                />
                 <section>
-                  <h3>Project 1</h3>
-                  <p>A brief description of Project 1.</p>
+                  <h3>ToDo list App</h3>
+                  <p data-key="pro1-desc">
+                    This project is a modern task management web app designed to
+                    help users organize their daily activities efficiently.
+                    Users can create, edit, and delete tasks, and also filter
+                    them by category and date. Before saving a task, they must
+                    select a date and category, ensuring proper task
+                    organization. The app features smooth animations and
+                    beautiful loading effects during task creation or filtering
+                    for a pleasant user experience. It includes a login and
+                    signup system with email and password, allowing users to
+                    access their personalized dashboard and settings. On the
+                    main page, users can easily track how many tasks they’ve
+                    completed and how many remain for each day, along with total
+                    daily statistics.
+                  </p>
                   <ul>
-                    <li>Feature 1</li>
-                    <li>Feature 2</li>
-                    <li>Feature 3</li>
+                    <li data-key="pro1-feature1">
+                      Filter task by date and category
+                    </li>
+                    <li data-key="pro1-feature2">
+                      Smooth animations and loading effects
+                    </li>
+                    <li data-key="pro1-feature3">
+                      User authentication with email and password
+                    </li>
+                    <li data-key="pro1-feature4">
+                      Giving full status of tasks like done and ongoing ones
+                    </li>
                   </ul>
                 </section>
               </div></a
@@ -164,30 +257,36 @@
           <li>
             <a href=""
               ><div>
-                <img src="./Images/mountain-rock-forest-nature-scenery-hd-wallpaper-uhdpaper.com-134@0@i.jpg" alt="Project 1" />
+                <img
+                  src="./Images/mountain-rock-forest-nature-scenery-hd-wallpaper-uhdpaper.com-134@0@i.jpg"
+                  alt="Project 1"
+                />
                 <section>
-                  <h3>Project 1</h3>
-                  <p>A brief description of Project 1.</p>
+                  <h3 data-key="title-pro2">Warehouse & Logistics Management System</h3>
+                  <p data-key="pro2-desc">
+                    This project is a professional warehouse and logistics
+                    management system designed for wholesale and B2B businesses.
+                    It allows managers and warehouse employees to register new
+                    products with detailed information such as item type,
+                    dimensions, serial codes, and quantity. Warehouse employees
+                    can prepare and organize orders based on customer requests,
+                    while drivers and logistics staff can access assigned
+                    deliveries through their dedicated panel. When stock runs
+                    low, employees can send restock requests to managers,
+                    ensuring smooth inventory control and product availability.
+                    Customers (mostly retailers and factories) can use the
+                    logistics section to calculate total shipping costs — by
+                    entering details like source, destination, weight, quantity,
+                    and vehicle type — before confirming their order. The site
+                    also features modern animations and interactive sections for
+                    public users, while keeping the admin and warehouse panels
+                    clean and minimal for better productivity.
+                  </p>
                   <ul>
-                    <li>Feature 1</li>
-                    <li>Feature 2</li>
-                    <li>Feature 3</li>
-                  </ul>
-                </section>
-              </div></a
-            >
-          </li>
-          <li>
-            <a href=""
-              ><div>
-                <img src="./Images/mountain-rock-forest-nature-scenery-hd-wallpaper-uhdpaper.com-134@0@i.jpg" alt="Project 1" />
-                <section>
-                  <h3>Project 1</h3>
-                  <p>A brief description of Project 1.</p>
-                  <ul>
-                    <li>Feature 1</li>
-                    <li>Feature 2</li>
-                    <li>Feature 3</li>
+                    <li data-key="pro2-feature1">UI Friendly</li>
+                    <li data-key="pro2-feature2">Real-time Inventory Tracking</li>
+                    <li data-key="pro2-feature3">Order Management</li>
+                    <li data-key="pro2-feature4">Calculation of Shipping Costs</li>
                   </ul>
                 </section>
               </div></a
@@ -195,24 +294,71 @@
           </li>
         </ul>
       </section>
+      <section id="experience">
+        <h3 data-key="">Experience</h3>
+        <ul class="Experiance-lists">
+          <li class="Exp-item">
+            <img src="./Images/utabpars.png" alt="Company Logo-1" />
+            <div>
+              <h2 data-key="exp1-title">FullStack developer-internship</h2>
+              <ul class="Gained-exp">
+                <li data-key="exp1-benefit1">
+                  I started this internship to gain practical experience in
+                  full-stack development.
+                </li>
+                <li data-key="exp1-benefit2">
+                  I learned PHP and its framework laravel and routing concepts.
+                </li>
+                <li data-key="exp1-benefit3">
+                  I have gained more experiance in real-life projects and got
+                  more profesional coding skills in HTML,tailwind Css,JQuery
+                </li>
+              </ul>
+            </div>
+            <p class="working-time">20 Feb 2023-23 Aug 2024</p>
+          </li>
+
+          <li class="Exp-item">
+            <img src="./Images/taavsystem.png" alt="Company Logo-2" />
+            <div>
+              <h2 data-key="exp2-title">Flutter Developer</h2>
+              <ul class="Gained-exp">
+                <li data-key="exp2-benefit1">
+                  I started this internship because I wanted to gain more
+                  experience in mobile app development as working in just UI/UX.
+                </li>
+                <li data-key="exp2-benefit2">
+                  I learned some fundamental concepts of C++
+                </li>
+                <li data-key="exp2-benefit3">
+                  I learned and gained experiance in logical Solving
+                </li>
+              </ul>
+            </div>
+            <p class="working-time">22 Dec 2022-30 Jan 2023</p>
+          </li>
+        </ul>
+      </section>
       <section id="contact">
-        <h3>Contact</h3>
+        <h3 data-key="contact-title">Contact me</h3>
         <div>
-          <form action="" method="post">
-            <label for="FName">First Name:</label>
+          <form onsubmit="sendEmail() ; reset() ; flase">
+            <label for="FName" data-key="contact-fname">First Name:</label>
             <input type="text" id="FName" name="FName" required />
-            <label for="LName">Last Name:</label>
+            <label for="LName" data-key="contact-lname">Last Name:</label>
             <input type="text" id="LName" name="LName" />
-            <label for="companyName">Company Name:</label>
+            <label for="companyName" data-key="contact-company"
+              >Company Name:</label
+            >
             <input type="text" id="companyName" name="companyName" />
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required />
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" required></textarea>
-            <button type="submit">Send</button>
+            <label for="email" data-key="contact-email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Example@gmail.com" required />
+            <label for="message" data-key="contact-msg">Message:</label>
+            <textarea id="message" name="message" placeholder="Type here..." required></textarea>
+            <button type="submit" data-key="contact-send">Send</button>
           </form>
         </div>
-        <p>
+        <p data-key="contact-later">
           You can also reach me via email at
           <a href="mailto:ashkanfirouzeh80m@gmail.com"
             >ashkanfirouzeh80m@gmail.com</a
@@ -222,7 +368,7 @@
     </main>
     <!-- Copyright and footer section -->
     <footer>
-      <p>&copy; 2023 Ashkan Firouzeh. All rights reserved.</p>
+      <p>&copy; 2025 Ashkan Firouzeh. All rights reserved.</p>
     </footer>
 
     <script src="./main.js"></script>
