@@ -1,5 +1,5 @@
 @import "variables";
-html{
+html {
   scroll-behavior: smooth !important;
 }
 body {
@@ -67,6 +67,91 @@ header {
         }
       }
     }
+    .Reponsive-nav {
+      display: none;
+      flex-direction: column;
+      width: 100vw;
+      height: 84vh;
+      background-color: $background-color;
+      z-index: 10;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      justify-items: center;
+      div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        a {
+          display: inline-block;
+          width: 100%;
+          text-align: center;
+          padding: 15px 0;
+          text-decoration: none;
+          color: $text-color;
+          border-radius: $border-radius;
+          transition: border $transition-duration $transition-ease;
+          &:active {
+            border: $border-color solid 2px;
+          }
+        }
+      }
+    }
+    .responsive-bars {
+      margin: 0;
+      svg {
+        transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+        path{
+          stroke: black;
+        }
+      }
+      .active svg {
+        transform: rotate(90deg);
+      }
+      path {
+        transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1),
+          stroke-dasharray 500ms cubic-bezier(0.4, 0, 0.2, 1),
+          stroke-dashoffset 500ms cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      path:nth-child(1) {
+        transform-origin: 36% 40%;
+      }
+      path:nth-child(2) {
+        stroke-dasharray: 29 299;
+      }
+      path:nth-child(3) {
+        transform-origin: 35% 63%;
+      }
+      path:nth-child(4) {
+        stroke-dasharray: 29 299;
+      }
+      path:nth-child(5) {
+        transform-origin: 61% 52%;
+      }
+      path:nth-child(6) {
+        transform-origin: 62% 52%;
+      }
+      .active path:nth-child(1) {
+        transform: translateX(9px) translateY(1px) rotate(45deg);
+      }
+      .active path:nth-child(2) {
+        stroke-dasharray: 225 299;
+        stroke-dashoffset: -72px;
+      }
+      .active path:nth-child(3) {
+        transform: translateX(9px) translateY(1px) rotate(-45deg);
+      }
+      .active path:nth-child(4) {
+        stroke-dasharray: 225 299;
+        stroke-dashoffset: -72px;
+      }
+      .active path:nth-child(5) {
+        transform: translateX(9px) translateY(1px) rotate(-45deg);
+      }
+      .active path:nth-child(6) {
+        transform: translateX(9px) translateY(1px) rotate(45deg);
+      }
+    }
   }
 }
 main {
@@ -92,8 +177,8 @@ main {
       &::after {
         content: "";
         position: absolute;
-        width: 450px;
-        height: 450px;
+        width: 30vw;
+        height: 65vh;
         top: -17%;
         left: 17%;
         background-color: $background-color;
@@ -117,6 +202,7 @@ main {
         margin-bottom: $spacing-unit * 2;
       }
       p {
+        text-align: justify;
         line-height: 1.6;
         margin-bottom: $spacing-unit * 2;
       }
@@ -133,6 +219,7 @@ main {
       margin-bottom: 15px;
     }
     p {
+      text-align: justify;
       line-height: 1.6;
       margin: 0 auto;
       width: 60%;
@@ -366,6 +453,9 @@ main {
       align-items: stretch;
       li {
         width: 47%;
+        p {
+          text-align: justify;
+        }
         a {
           display: inline-block;
           width: 100%;
@@ -479,52 +569,56 @@ main {
       font-size: 2rem;
       text-align: center;
     }
-    form {
+    div {
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      background-color:  #f0f0f0;
-      padding: 30px;
-      border-radius: $border-radius;
-      width: 400px;
-      box-shadow: $box-shadow;
-      label {
-        align-self: flex-start;
-        margin-bottom: $spacing-unit;
-        font-weight: $heading-font-weight;
-      }
-      textarea{
-        min-height: 150px;
-      }
-      input,
-      textarea {
-        background-color: $background-color;
-        width: 100%;
-        padding: $spacing-unit;
-        border: 2px solid $border-color;
+      justify-content: center;
+      form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #f0f0f0;
+        padding: 30px;
         border-radius: $border-radius;
-        font-size: 1rem;
-        font-family: $font-family;
-        margin-bottom: $spacing-unit * 2;
-        resize: vertical;
-      }
-      button {
-        background-color: $primary-color;
-        color: $button-text-color;
-        padding: $spacing-unit * 1.5 $spacing-unit * 3;
-        border: none;
-        border-radius: 8px;
-        font-size: 1rem;
-        cursor: pointer;
-        transition: background-color $transition-duration $transition-ease;
-        &:hover {
-          background-color: $button-background-color;
+        width: 400px;
+        box-shadow: $box-shadow;
+        label {
+          align-self: flex-start;
+          margin-bottom: $spacing-unit;
+          font-weight: $heading-font-weight;
+        }
+        textarea {
+          min-height: 150px;
+        }
+        input,
+        textarea {
+          background-color: $background-color;
+          width: 100%;
+          padding: $spacing-unit;
+          border: 2px solid $border-color;
+          border-radius: $border-radius;
+          font-size: 1rem;
+          font-family: $font-family;
+          margin-bottom: $spacing-unit * 2;
+          resize: vertical;
+        }
+        button {
+          background-color: $primary-color;
+          color: $button-text-color;
+          padding: $spacing-unit * 1.5 $spacing-unit * 3;
+          border: none;
+          border-radius: 8px;
+          font-size: 1rem;
+          cursor: pointer;
+          transition: background-color $transition-duration $transition-ease;
+          &:hover {
+            background-color: $button-background-color;
+          }
         }
       }
     }
   }
 }
-footer{
+footer {
   background-color: rgb(141, 141, 141);
   color: $background-color;
   text-align: center;
@@ -533,5 +627,109 @@ footer{
   p {
     margin: 0;
     font-size: 0.9rem;
+  }
+}
+
+// Mobile breakpoint
+@media screen and (min-width: 330px) and (max-width: 745px) {
+  header {
+    .nav-links {
+      display: none !important;
+    }
+    .Reponsive-nav{
+      display: flex;
+    }
+  }
+  #introduction {
+    justify-content: center;
+    .profile-image {
+      display: none !important;
+    }
+    .about-content {
+      width: 87% !important;
+      p {
+        width: 100%;
+      }
+    }
+  }
+  #AboutMe {
+    height: auto !important;
+    p {
+      width: 80% !important;
+      margin-bottom: 30px !important;
+    }
+    .soft-skills {
+      width: 90% !important;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+    }
+  }
+  #skills {
+    overflow-x: hidden;
+    .carousel-container {
+      width: 65vw !important;
+    }
+  }
+  #projects {
+    .ProjectLists {
+      flex-direction: column;
+      align-items: center !important;
+      li {
+        width: 93% !important;
+        h3 {
+          margin: 0.5em;
+        }
+        p {
+          margin: 1em !important;
+        }
+        ul {
+          padding-left: 20px !important;
+        }
+      }
+    }
+  }
+  #experience {
+    height: auto !important;
+    .Experiance-lists {
+      padding: 0 20px !important;
+      .Exp-item {
+        img {
+          margin: auto;
+        }
+        flex-direction: column;
+        align-items: center !important;
+        height: auto !important;
+        div {
+          padding: 0 20px !important;
+          .Gained-exp {
+            padding-left: 15px;
+          }
+        }
+        .working-time {
+          padding: 0 20px !important;
+        }
+      }
+    }
+  }
+  #contact {
+    div {
+      width: 90% !important;
+      form {
+        width: 83% !important;
+        padding: 27px !important;
+      }
+    }
+    [data-key="contact-later"] {
+      text-align: center;
+    }
+  }
+}
+
+// Tablet breakpoint
+@media screen and (min-width: 745) and (max-width: 1600px) {
+  #introduction {
+    .about-content {
+      width: 50%;
+    }
   }
 }
