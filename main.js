@@ -23,7 +23,6 @@ window.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  
   // Animate skills items on scroll into view with staggered effect
   const skillItems = document.querySelectorAll(".skill-item");
 
@@ -35,24 +34,42 @@ window.addEventListener("DOMContentLoaded", () => {
       if (rect.top < windowHeight - 100) {
         setTimeout(() => {
           item.classList.add("visible");
-        }, index * 200); 
+        }, index * 300);
       }
     });
   }
-
   let isScrolling = false;
   window.addEventListener("scroll", () => {
     if (!isScrolling) {
       window.requestAnimationFrame(() => {
         handleScroll();
+        handleScroll2();
         isScrolling = false;
       });
       isScrolling = true;
     }
   });
+
   // Initial check in case items are already in view
   handleScroll();
 
+  // slide fade-in Animation for experiance
+  const expList = document.querySelectorAll(".Exp-item");
+  function handleScroll2() {
+    expList.forEach((item, index) => {
+      const rect = item.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+
+      if (rect.top < windowHeight - 100) {
+        setTimeout(() => {
+          item.classList.add("visible");
+        }, index * 300);
+      }
+    });
+  }
+  // Initial check in case items are already in view
+  handleScroll2();
+  
 
   //Show skills carousel with 3D effect
   const carousel = document.querySelector(".showcase-skills");
