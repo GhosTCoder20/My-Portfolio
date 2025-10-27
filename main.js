@@ -191,6 +191,29 @@ window.addEventListener("DOMContentLoaded", () => {
   // Ensure the visual order is synced with the current DOM order, then wire controls
   skillsCarousel.UpdateCarousel();
   skillsCarousel.useControls();
+
+
+  //Responsive navbar
+  const responBars = document.querySelector(".responsive-bars");
+  const responLinks = document.querySelectorAll(".Responsive-nav a");
+  const responNavbar = document.querySelector(".Responsive-nav");
+  let menuOpen = false;
+
+  responBars.addEventListener("click", () => {
+    menuOpen = !menuOpen;
+    responNavbar.style.height = menuOpen ? "84vh" : "0";
+  });
+
+  // close menu when any nav link is clicked
+  if (responLinks && responLinks.forEach) {
+    responLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        menuOpen = false;
+        responNavbar.style.height = "0";
+        document.querySelector(".responsive-bars svg").classList.remove("active");
+      });
+    });
+  }
 });
 
 //# sourceMappingURL=main.js.map

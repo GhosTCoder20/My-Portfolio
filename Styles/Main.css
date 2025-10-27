@@ -64,24 +64,25 @@ header nav .nav-links li a {
 header nav .nav-links li a:hover {
   box-shadow: 0 0 9px #83c5be;
 }
-header nav .Reponsive-nav {
+header nav .Responsive-nav {
   display: none;
   flex-direction: column;
   width: 100vw;
-  height: 84vh;
+  height: 0;
   background-color: #fefae0;
-  z-index: 10;
   position: absolute;
-  bottom: 0;
+  top: 74px;
   left: 0;
   justify-items: center;
+  overflow-y: hidden;
+  transition: all 0.2s ease-in-out;
 }
-header nav .Reponsive-nav div {
+header nav .Responsive-nav div {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-header nav .Reponsive-nav div a {
+header nav .Responsive-nav div a {
   display: inline-block;
   width: 100%;
   text-align: center;
@@ -91,10 +92,11 @@ header nav .Reponsive-nav div a {
   border-radius: 4px;
   transition: border 0.2s ease-in-out;
 }
-header nav .Reponsive-nav div a:active {
+header nav .Responsive-nav div a:active {
   border: #dddddd solid 2px;
 }
 header nav .responsive-bars {
+  display: none;
   margin: 0;
 }
 header nav .responsive-bars svg {
@@ -258,6 +260,7 @@ main #skills {
   align-items: center;
   position: relative;
   background: radial-gradient(circle at 50% 50%, #fdfdfd, #f0f0f0);
+  overflow-x: hidden;
 }
 main #skills h2 {
   font-size: 2rem;
@@ -265,7 +268,7 @@ main #skills h2 {
 }
 main #skills .carousel-container {
   height: 65%;
-  width: 20%;
+  width: 290px;
 }
 main #skills .carousel-container .showcase-skills {
   display: flex;
@@ -608,11 +611,23 @@ footer p {
 }
 
 @media screen and (min-width: 330px) and (max-width: 745px) {
+  header {
+    padding: 10px;
+    position: sticky;
+    top: 0;
+    z-index: 11;
+  }
   header .nav-links {
     display: none !important;
   }
-  header .Reponsive-nav {
-    display: flex;
+  header .brand {
+    font-size: 66%;
+  }
+  header .Responsive-nav {
+    display: flex !important;
+  }
+  header .responsive-bars {
+    display: block !important;
   }
   #introduction {
     justify-content: center;
@@ -638,11 +653,8 @@ footer p {
     flex-wrap: wrap;
     margin-bottom: 30px;
   }
-  #skills {
-    overflow-x: hidden;
-  }
   #skills .carousel-container {
-    width: 65vw !important;
+    width: 250px !important;
   }
   #projects .ProjectLists {
     flex-direction: column;
@@ -664,7 +676,7 @@ footer p {
     height: auto !important;
   }
   #experience .Experiance-lists {
-    padding: 0 20px !important;
+    padding: 20px !important;
   }
   #experience .Experiance-lists .Exp-item {
     flex-direction: column;
