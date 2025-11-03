@@ -14,12 +14,15 @@ window.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
+  
   let isScrolling = false;
   window.addEventListener("scroll", () => {
     if (!isScrolling) {
       window.requestAnimationFrame(() => {
         handleScroll();
         handleScroll2();
+        handleProjectsScroll();
+        toggleGoToTopButton();
         isScrolling = false;
       });
       isScrolling = true;
@@ -45,6 +48,23 @@ window.addEventListener("DOMContentLoaded", () => {
   }
   // Initial check in case items are already in view
   handleScroll2();
+
+  // Animate project cards on scroll
+  const projectItems = document.querySelectorAll("#projects .ProjectLists li");
+  function handleProjectsScroll() {
+    projectItems.forEach((item, index) => {
+      const rect = item.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+
+      if (rect.top < windowHeight - 100) {
+        setTimeout(() => {
+          item.classList.add("visible");
+        }, index * 200);
+      }
+    });
+  }
+  // Initial check
+  handleProjectsScroll();
 
   //Show skills carousel with 3D effect
   const carousel = document.querySelector(".showcase-skills");
@@ -212,6 +232,92 @@ window.addEventListener("DOMContentLoaded", () => {
         responNavbar.style.height = "0";
         document.querySelector(".responsive-bars svg").classList.remove("active");
       });
+    });
+  }
+
+  // Go to top button functionality
+  const goToTopBtn = document.getElementById("goToTop");
+  
+  function toggleGoToTopButton() {
+    if (window.scrollY > 300) {
+      goToTopBtn.classList.add("visible");
+    } else {
+      goToTopBtn.classList.remove("visible");
+    }
+  }
+  
+  goToTopBtn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+
+  // Form submission handling with animations
+  const contactForm = document.getElementById("contactForm");
+  const formMessage = document.getElementById("formMessage");
+
+  if (contactForm) {
+    contactForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      
+      // Add submitting state
+      contactForm.classList.add("submitting");
+      const submitButton = contactForm.querySelector('button[type="submit"]');
+      submitButton.disabled = true;
+      
+      // Hide any previous messages
+      formMessage.classList.remove("show", "success", "error");
+      
+      // Prepare form data
+      const formData = new FormData(contactForm);
+      
+      try {
+        const response = await fetch("/", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: new URLSearchParams(formData).toString()
+        });
+        
+        // Remove submitting state
+        contactForm.classList.remove("submitting");
+        submitButton.disabled = false;
+        
+        if (response.ok) {
+          // Show success message
+          formMessage.textContent = "Thank you! Your message has been sent successfully.";
+          formMessage.classList.add("success");
+          setTimeout(() => {
+            formMessage.classList.add("show");
+          }, 100);
+          
+          // Reset form
+          contactForm.reset();
+          
+          // Hide message after 5 seconds
+          setTimeout(() => {
+            formMessage.classList.remove("show");
+          }, 5000);
+        } else {
+          throw new Error("Form submission failed");
+        }
+      } catch (error) {
+        // Remove submitting state
+        contactForm.classList.remove("submitting");
+        submitButton.disabled = false;
+        
+        // Show error message
+        formMessage.textContent = "Oops! Something went wrong. Please try again.";
+        formMessage.classList.add("error");
+        setTimeout(() => {
+          formMessage.classList.add("show");
+        }, 100);
+        
+        // Hide message after 5 seconds
+        setTimeout(() => {
+          formMessage.classList.remove("show");
+        }, 5000);
+      }
     });
   }
 });
