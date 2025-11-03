@@ -408,7 +408,11 @@
       <section id="contact">
         <h3 data-key="contact-title">Contact me</h3>
         <div>
-          <form onsubmit="sendEmail() ; reset() ; flase">
+          <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" id="contactForm">
+            <input type="hidden" name="form-name" value="contact" />
+            <p hidden>
+              <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+            </p>
             <label for="FName" data-key="contact-fname">First Name:</label>
             <input type="text" id="FName" name="FName" required />
             <label for="LName" data-key="contact-lname">Last Name:</label>
@@ -433,6 +437,7 @@
               required
             ></textarea>
             <button type="submit" data-key="contact-send">Send</button>
+            <div id="formMessage" class="form-message"></div>
           </form>
         </div>
         <p data-key="contact-later">
@@ -448,8 +453,9 @@
       <p>&copy; 2025 Ashkan Firouzeh. All rights reserved.</p>
     </footer>
 
-    <!-- EmailJS SDK -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <!-- Go to Top Button -->
+    <button class="go-to-top" id="goToTop" aria-label="Go to top">&#8679;</button>
+
     <script src="./main.js"></script>
   </body>
 </html>
